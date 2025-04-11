@@ -74,7 +74,18 @@ namespace ZeldaMCSaveCheck
         {
             w.Stop();
 
-            Process process = Process.GetProcessesByName("mGBA")[0];
+            Process[] procs = Process.GetProcessesByName("mGBA");
+
+            if (procs.Length == 0)
+            {
+                MessageBox.Show("mGBA was closed...");
+                Environment.Exit(0);
+                return;
+            }
+
+            Process process = procs[0];
+
+
             IntPtr processHandle = OpenProcess(PROCESS_WM_READ, false, process.Id);
 
             int bytesRead = 0;
