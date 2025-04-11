@@ -88,18 +88,34 @@ namespace ZeldaMCSaveCheck
             int ch2z = Checksum(buffer.ToList());
             int fzz = Finalize(ch, ch2z);
 
-            this.textBox1.Invoke((MethodInvoker)delegate
+            this.label1.Invoke((MethodInvoker)delegate
             {
-                textBox1.Text = fzz.ToString("X");
+                label1.Text = (fzz & 0xFFFF).ToString("X4");
 
                 if ((fzz & 0xFFFF) == 0)
-                    textBox1.ForeColor = Color.Red;
+                    label1.ForeColor = Color.Red;
                 else
-                    textBox1.ForeColor = Color.Black;
+                    label1.ForeColor = Color.Black;
 
-                textBox1.BackColor = textBox1.BackColor;
+                label1.BackColor = label1.BackColor;
 
             });
+
+            this.label2.Invoke((MethodInvoker)delegate
+            {
+                string t = (fzz & 0xFFFF0000).ToString("X8");
+
+                if (t.Length > 4)
+                {
+                    label2.Text = t.Substring(0, 4);
+                }
+                else
+                    label2.Text = "0000";
+
+
+            });
+
+
 
             w.Start();
         }
@@ -178,16 +194,31 @@ namespace ZeldaMCSaveCheck
 
                 File.Delete("out");
 
-                this.textBox1.Invoke((MethodInvoker)delegate
+                this.label1.Invoke((MethodInvoker)delegate
                 {
-                    textBox1.Text = fzz.ToString("X");
+                    label1.Text = (fzz & 0xFFFF).ToString("X4");
 
                     if ((fzz & 0xFFFF) == 0)
-                        textBox1.ForeColor = Color.Red;
+                        label1.ForeColor = Color.Red;
                     else
-                        textBox1.ForeColor = Color.Black;
+                        label1.ForeColor = Color.Black;
 
-                    textBox1.BackColor = textBox1.BackColor;
+                    label1.BackColor = label1.BackColor;
+
+                });
+
+                this.label2.Invoke((MethodInvoker)delegate
+                {
+                    string t = (fzz & 0xFFFF0000).ToString("X8");
+
+                    if (t.Length > 4)
+                    {
+                        label2.Text = t.Substring(0, 4);
+                    }
+                    else
+                        label2.Text = "0000";
+
+
                 });
 
             }
