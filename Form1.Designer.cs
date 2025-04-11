@@ -47,12 +47,12 @@ namespace ZeldaMCSaveCheck
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("AdLib", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Arial Black", 56F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.textBox1.Location = new System.Drawing.Point(12, 48);
+            this.textBox1.Location = new System.Drawing.Point(12, 44);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(662, 108);
+            this.textBox1.Size = new System.Drawing.Size(662, 113);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Checksum";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
