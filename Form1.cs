@@ -181,6 +181,13 @@ namespace ZeldaMCSaveCheck
                 this.textBox1.Invoke((MethodInvoker)delegate
                 {
                     textBox1.Text = fzz.ToString("X");
+
+                    if ((fzz & 0xFFFF) == 0)
+                        textBox1.ForeColor = Color.Red;
+                    else
+                        textBox1.ForeColor = Color.Black;
+
+                    textBox1.BackColor = textBox1.BackColor;
                 });
 
             }
