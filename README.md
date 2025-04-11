@@ -4,7 +4,7 @@ Check Minish Cap save for false corruption.
 Provided is an unchanged 32-Bit Build of https://github.com/mgba-emu/mgba, commit 5bf240a.
 64-Bit builds will not work.
 
-<h1>Usage:</h1><br>
+<h1>Usage:</h1>
 <h2>Monitoring a save file:</h2>
 Click "Monitor save" and open the .sav file made by mGBA. <br>
 The checksum will update every time the game is saved. Only the save in the first slot is checked.<br>
